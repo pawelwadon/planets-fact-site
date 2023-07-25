@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --main-color:#070724;
+    --grey:#38384F;
+    --light-grey:#838391;
+    --mercury-color: #419EBB;
+    --venus-color:#EDA249;
+    --earth-color:#6D2ED5;
+    --mars-color:#D14C32;
+    --jupiter-color:#D83A34;
+    --saturn-color:#CD5120;
+    --uranus-color:#1EC1A2;
+    --neptune-color:#2D68F0;
+}
+
+h1{
+font-family: 'Antonio';
+font-size: 4.5rem;
+font-weight: 500;
+text-transform: uppercase;
+
+}
+
+h2{
+font-family: 'Antonio';
+font-size: 1.875rem; 
+line-height: 2.25rem;
+font-weight: 500;
+letter-spacing: -1.5px;
+text-transform: uppercase;
+}
+
+h3,li{
+font-family: 'Spartan';
+font-size: 0.75rem;
+line-height: 1rem;
+font-weight: 700;
+letter-spacing: 2.6px;
+text-transform: uppercase;
+}
+
+h4,button,span{
+font-family: 'Spartan';
+font-size: 0.75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+line-height: 1rem;
+}
+
+p{
+font-family: 'Spartan';
+font-size: 0.875rem;
+line-height: 1.25rem;
+font-weight: 400;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--main-color);
+    background-image: url(./assets/background-stars.svg);
+    color: rgb(255, 255, 255);
+    background-size: 70%;
+}
+
+.button-list{
+    grid-area: button-list;
+}
+
+.image{
+    grid-area: image;
+}
+
+.text{
+    grid-area: main-text;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 2fr 1fr ;
+    grid-template-areas:
+    'image main-text' 
+    'image button-list';
+    place-content: center;
+}
+
+@media (max-width:639px) {
+    .content{ 
+    grid-template:
+    'button-list'
+    'image'
+    'main-text';
+    } ;
+}
+
+@media (min-width:640px) and (max-width:1023px){
+    .content{
+    grid-template-columns: 1fr 1fr;
+    grid-template:
+    'image image'
+    'main-text button-list';
+    place-content: center;
+    column-gap: 3rem;
+    }
+}
+
+
